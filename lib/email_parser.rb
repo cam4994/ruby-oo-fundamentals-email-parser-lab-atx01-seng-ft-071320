@@ -7,12 +7,12 @@ class EmailAddressParser
   attr_accessor :emails 
   
   def initialize (emails)
-    @string_of_emails = emails 
+    @emails = emails 
   end 
   
   def parse
-    @emails = @string_of_emails.split(/[\s,]/)
-    @emails.delete_if{|element| element == ""}
+    @emails = @emails.split(/, | /)
+    
     @emails.uniq
   end 
 end 
